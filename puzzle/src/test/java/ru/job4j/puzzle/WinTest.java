@@ -1,6 +1,6 @@
 package ru.job4j.puzzle;
 
-import org.junit.Ignore;
+import  org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
