@@ -10,15 +10,13 @@ public class BishopBlackTest {
     @Test
     public void testPosition() {
         BishopBlack bishopBlack = new BishopBlack(Cell.A1);
-        bishopBlack.position();
         assertThat(bishopBlack.position(), is(Cell.A1));
     }
 
     @Test
     public void testCopy() {
         BishopBlack bishopBlack = new BishopBlack(Cell.A1);
-        bishopBlack = (BishopBlack) bishopBlack.copy(Cell.A3);
-        assertThat(bishopBlack.position(), is(Cell.A3));
+        assertThat(bishopBlack.copy(Cell.A3).position(), is(Cell.A3));
     }
 
     @Test
@@ -33,6 +31,12 @@ public class BishopBlackTest {
     public void testWrongWay() throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
         Cell[] array = bishopBlack.way(Cell.G7);
+    }
 
+    @Test
+    public void testisDiagonal() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.C1);
+        boolean flag = bishopBlack.isDiagonal(bishopBlack.position(), Cell.G5);
+        assertThat(flag, is(true));
     }
 }
